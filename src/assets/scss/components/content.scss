@@ -1,6 +1,4 @@
 .main {
-    // width: 100%;
-    // height: 100%;
 
     &__cards {
         display: flex;
@@ -158,15 +156,6 @@
 
     &__flight {
         margin-top: 18px;
-
-        @include resolution(desktop) {
-            // display: flex;
-            // flex-direction: row;
-            // justify-content: flex-start;
-            // align-items: flex-start;
-            // position: relative;
-            // flex-wrap: wrap;
-        }
     }
 
     &__times {
@@ -183,9 +172,6 @@
             top: 234px;
             left: 221px;
             width: 315px;
-            // margin-left: 9px;
-            // width: 390px;
-            // margin-left: 44px;
         }
     }
 
@@ -198,6 +184,12 @@
         color: $color-mine-shaft;
         @include font(opensans-14);
         margin-bottom: 5px;
+        transition: 1s;
+        cursor: pointer;
+
+        &:hover {
+            background: $color-malibu;
+        }
 
         @include resolution(desktop) {
             width: 73px;
@@ -265,6 +257,12 @@
         background: $color-mustard;
         @include font(opensans-14);
         color: $color-tundora;
+        transition: 1s;
+        cursor: pointer;
+
+        &:hover {
+            background: $color-buddha-gold;
+        }
 
         @include resolution(desktop) {
             width: 187px;
