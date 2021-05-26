@@ -1,17 +1,21 @@
 // Magic strings
-const classCardTimes = '.card__times';
-const classCardTime = '.card__time';
+const classCardTimes = '.card__capabilities__times';
+const classCardTime = '.card__capabilities__time';
+const nameClassCardTime = 'card__capabilities__time';
+const nameClassCardTimeTub = 'card__capabilities__time__yet';
 const classInfo = '.card__info';
 const sizeIndent = '50px';
+const timeFlight = '12:00';
+const buttonYet = 'ещё...';
 
 const layoutCardTimes = `
-    <button class="card__time">12:00</button>
-    <button class="card__time">12:00</button>
-    <button class="card__time">12:00</button>
-    <button class="card__time">ещё...</button>
+    <button class=${nameClassCardTime}>${timeFlight}</button>
+    <button class=${nameClassCardTime}>${timeFlight}</button>
+    <button class=${nameClassCardTime}>${timeFlight}</button>
+    <button class=${nameClassCardTime}>${buttonYet}</button>
 `;
 
-const layoutButton = '<button class="card__time">12:00</button>';
+const layoutButton = `<button class=${nameClassCardTime}>${timeFlight}</button>`;
 
 // Magic numbers
 const elemYet = 4;
@@ -36,8 +40,12 @@ cardTimes.forEach((element, index) => {
             for (let i = 0; i < buttons.length; i++) {
                 element.innerHTML += layoutButton;
             }
-        });
 
-        cardInfo[index].style.marginTop = '50px';
+            const buttonsTime =  element.querySelectorAll(classCardTime);
+            
+            for (let i = 0; i < buttonsTime.length; i ++) {
+                buttonsTime[i].classList.add(nameClassCardTimeTub);
+            }
+        });
     } 
 });
